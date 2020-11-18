@@ -12,7 +12,7 @@ document.querySelector("#volumeSlider").oninput = function() {
 
 document.querySelector("#play").addEventListener("click", function() {
 	video.play();
-	document.querySelector("#volume").innerHTML = document.querySelector("#volumeSlider").value;
+	document.querySelector("#volume").innerHTML = video.volume * 100;
 	console.log("Play Video");
 });
 
