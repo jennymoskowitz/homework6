@@ -42,17 +42,13 @@ document.querySelector("#skip").addEventListener("click", function() {
 });
 
 document.querySelector("#mute").addEventListener("click", function() {
-	if (document.querySelector("#mute").innerHTML == "Mute") {
-		video.volume = 0;
-		document.querySelector("#volume").innerHTML = 0 + '%'
-		document.querySelector("#mute").innerHTML = "Unmute";
-		document.querySelector("#volumeSlider").value = 0;
+	if (video.muted) {
+		video.muted = false;
+		this.innerHTML = "Mute";
 	}
 	else{
-		document.querySelector("#mute").innerHTML = "Mute";
-		document.querySelector("#volume").innerHTML = 100+ '%';
-		document.querySelector("#volumeSlider").value = 100;
-		video.volume = 1;
+		video.muted = true;
+		this.innerHTML = "Unmute";
 	}
 });
 
